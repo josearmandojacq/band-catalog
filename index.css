@@ -1,0 +1,66 @@
+*{
+  margin: 0;
+}
+
+body{
+  background-color: #ccc;
+}
+
+#container{
+  display: flex;
+  flex-wrap: wrap;
+  width:100%;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+
+header{
+  display: flex;
+  height: 50px;
+  background-color: #484f4f;
+}
+
+h1{
+  color: white;
+  align-self: center;
+}
+
+.space-between{
+    margin-bottom: 20px;
+}
+
+div > div {
+  width: 25%;
+  margin-bottom: 30px;
+
+}
+
+li{
+  font-family: font-family: 'Slabo 27px', serif;;
+  font-size: 15px;
+
+}
+
+div > div:hover{
+  background-color: white;
+  transition-property: background-color;
+  transition-duration: 218ms;
+}
+
+@media all and (max-width: 640px) {
+  div > div{
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 640px) {
+  div > div{
+    width: 50%;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  div > div{
+    width: 25%;
+  }
+}
