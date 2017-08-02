@@ -26,12 +26,13 @@ h1{
 }
 
 .space-between{
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
 div > div {
   width: 25%;
   margin-bottom: 30px;
+
 
 }
 
