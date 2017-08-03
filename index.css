@@ -49,6 +49,8 @@ div > div:hover{
 }
 
 @media all and (max-width: 640px) {
+
+
   div > div{
     width: 100%;
   }
