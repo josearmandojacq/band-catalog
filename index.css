@@ -25,6 +25,12 @@ h1{
   align-self: center;
 }
 
+#search-field{
+  align-self: center;
+  position: absolute;
+  right: 100px;
+}
+
 .space-between{
     margin: 20px;
 }

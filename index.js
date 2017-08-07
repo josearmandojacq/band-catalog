@@ -1,6 +1,6 @@
 var mainElement = document.querySelector('main');
 
-function whenJSONLoad(bands){
+function renderByName(bands){
   var completeListOfBands = bands.map(function(band , i){
   var memberslist = renderMembers(band.members);
   var albumslist = renderAlbums(band.albums);
@@ -31,10 +31,11 @@ function whenJSONLoad(bands){
 function loadJson(url){
   fetch(url)
     .then(function(response){
-      console.log(response);
+
       return response.json();
     })
     .then(whenJSONLoad)
+
     .catch(function(err){
       console.info(err);
     });
@@ -83,6 +84,25 @@ function sortByNumber(a,b) {
 
 
 
+  function whenJSONLoad(bands){
+
+    renderByName(bands);
+
+    var search = document.querySelector('input');
+
+    search.addEventListener('keyup', function(){
+      if(search.value === ""){
+          throw "No valid input";
+      }else {
+        var newBands =  bands.filter(function(band){
+          return band.name.toLowerCase().indexOf(search.value.toLowerCase()) > -1;
+        });
+
+          renderByName(newBands);
+        }
+      });
+
+}
 
 
 
