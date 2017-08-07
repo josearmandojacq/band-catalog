@@ -42,7 +42,7 @@ li{
 
 }
 
-div > div:hover{
+main > div:hover{
   background-color: white;
   transition-property: background-color;
   transition-duration: 218ms;
@@ -51,19 +51,19 @@ div > div:hover{
 @media all and (max-width: 640px) {
 
 
-  div > div{
+  main > div{
     width: 100%;
   }
 }
 
 @media all and (min-width: 640px) {
-  div > div{
+  main > div{
     width: 50%;
   }
 }
 
 @media all and (min-width: 1024px) {
-  div > div{
+  main > div{
     width: 25%;
   }
 }
