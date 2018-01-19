@@ -1,6 +1,6 @@
- [
+[
   {
-    "name": "Band Name A",
+    "name": "The Rocks",
     "genre": "Rock",
     "members": [
       {
@@ -20,7 +20,7 @@
     ]
   },
   {
-    "name": "Band Name B",
+    "name": "Bpop",
     "genre": "Pop",
     "members": [
       {
@@ -52,7 +52,7 @@
     ]
   },
   {
-    "name": "Band Name C",
+    "name": "The headers",
     "genre": "Rock",
     "members": [
       {
@@ -68,7 +68,7 @@
     ]
   },
   {
-    "name": "Band D",
+    "name": "Wu tan",
     "genre": "HipHop",
     "members": [
       {
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "name": "Band E",
+    "name": "Devil",
     "genre": "Rock",
     "members": [
       {
@@ -124,7 +124,7 @@
     ]
   },
   {
-    "name": "Band Name A",
+    "name": "The pistols",
     "genre": "Rock",
     "members": [
       {
@@ -144,7 +144,7 @@
     ]
   },
   {
-    "name": "Band Name B",
+    "name": "Backstreet",
     "genre": "Pop",
     "members": [
       {
@@ -176,7 +176,7 @@
     ]
   },
   {
-    "name": "Band Name C",
+    "name": "Cancerber",
     "genre": "Rock",
     "members": [
       {
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "name": "Band D",
+    "name": "Oldschool",
     "genre": "HipHop",
     "members": [
       {
@@ -220,7 +220,7 @@
     ]
   },
   {
-    "name": "Band E",
+    "name": "Hell on fire",
     "genre": "Rock",
     "members": [
       {
