@@ -1,69 +1,70 @@
-*{
+* {
   margin: 0;
 }
 
-body{
+body {
   background-color: #ccc;
 }
 
-main{
+main {
   display: flex;
   flex-wrap: wrap;
-  width:100%;
+  width: 100%;
   margin-top: 50px;
   margin-left: 20px;
 }
 
-header{
+header {
   display: flex;
   height: 50px;
   background-color: #484f4f;
 }
 
-h1{
+h1 {
   color: white;
   align-self: center;
 }
 
-.space-between{
-    margin: 20px;
+#search-field {
+  align-self: center;
+  position: absolute;
+  right: 100px;
+}
+
+.space-between {
+  margin: 20px;
 }
 
 div > div {
   width: 25%;
   margin-bottom: 30px;
-
-
 }
 
-li{
-  font-family: font-family: 'Slabo 27px', serif;;
+li {
+  font-family: "Slabo 27px", serif;
   font-size: 15px;
-
 }
 
-main > div:hover{
+main > div:hover {
   background-color: white;
   transition-property: background-color;
   transition-duration: 218ms;
 }
 
 @media all and (max-width: 640px) {
-
-
-  main > div{
+  main > div {
     width: 100%;
   }
 }
 
 @media all and (min-width: 640px) {
-  main > div{
+  main > div {
     width: 50%;
   }
 }
 
 @media all and (min-width: 1024px) {
-  main > div{
+  main > div {
     width: 25%;
   }
 }

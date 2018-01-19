@@ -1,100 +1,105 @@
-var mainElement = document.querySelector('main');
+let mainElement = document.querySelector("main");
+let url = "./bands.json";
 
-function whenJSONLoad(bands){
-  var completeListOfBands = bands.map(function(band , i){
-  var memberslist = renderMembers(band.members);
-  var albumslist = renderAlbums(band.albums);
-    return `<div id="band1">
-      <h2 class="space-between">${band.name}<h2>
-      <h3 class="space-between">${band.genre}<h3>
-      <h3 class="space-between">Members<h3>
+// Handles the render of the layout
+renderByName = bands => {
+  let completeListOfBands = bands.map(function(band, i) {
+    let memberslist = renderMembers(band.members);
+    let albumslist = renderAlbums(band.albums);
+    return `<div id='band1'>
+      <h2 class='space-between'>${band.name}<h2>
+      <h3 class='space-between'>${band.genre}<h3>
+      <h3 class='space-between'>Members<h3>
 
-      <ul class="members space-between">
+      <ul class='members space-between'>
         <li>${memberslist}</li>
 
       </ul>
-      <h3 class="space-between">Albums<h3>
+      <h3 class='space-between'>Albums<h3>
 
 
-      <ul class="albums space-between">
+      <ul class='albums space-between'>
         <li>${albumslist}</li>
       </ul>
-    </div>`
-
-
+    </div>`;
   });
-  mainElement.innerHTML = completeListOfBands.join("");
-}
 
+  mainElement.innerHTML = completeListOfBands.join(""); //putting all the bands as a string back
+};
 
-
-function loadJson(url){
+// Fetching the data from the .json file
+loadJson = url => {
   fetch(url)
-    .then(function(response){
-      console.log(response);
+    .then(response => {
       return response.json();
     })
     .then(whenJSONLoad)
-    .catch(function(err){
+
+    .catch(function(err) {
       console.info(err);
     });
-}
+};
 
-function renderMembers(members) {
-  var  htmlString = "<h4>Members</h4><ul>";
-  members.sort(sortByName).forEach(function(member){
+// Render the bands members alphabetically
+renderMembers = members => {
+  let htmlString = "<h4>Members</h4><ul>";
+  members.sort(sortByName).forEach(member => {
     htmlString += `
 
           <li>
-            <span class="member-name">${member.name}</span>
-            <span class="member-instrument">${member.instrument}</span>
-          </li>`
+            <span class='member-name'>${member.name}</span>
+            <span class='member-instrument'>${member.instrument}</span>
+          </li>`;
   });
+
   return htmlString + "</ul>";
-}
+};
 
-function renderAlbums(albums) {
-  var htmlString = "<h4>Albums</h4><ul>";
-  albums.sort(sortByNumber).forEach(function(album) {
-
+// render albums depending of the year
+renderAlbums = albums => {
+  let htmlString = "<h4>Albums</h4><ul>";
+  albums.sort(sortByNumber).forEach(album => {
     htmlString += `
 
           <li>
-            <span class="album-name">${album.title}</span>
-            <span class="album-release-year">${album.releaseYear}</span>
-          </li>`
+            <span class='album-name'>${album.title}</span>
+            <span class='album-release-year'>${album.releaseYear}</span>
+          </li>`;
   });
-  return htmlString + "</ul>";
-}
 
-function sortByName(a,b) {
-  if (a.name < b.name)
-     return -1;
-  if (a.name > b.name)
-    return 1;
+  return htmlString + "</ul>";
+};
+
+// Sorting names alphabetically
+sortByName = (a, b) => {
+  if (a.name < b.name) return -1;
+  if (a.name > b.name) return 1;
   return 0;
-}
+};
 
-function sortByNumber(a,b) {
+//Sorting from smaller to bigger
+sortByNumber = (a, b) => {
   return a.releaseYear - b.releaseYear;
-}
+};
 
+whenJSONLoad = bands => {
+  renderByName(bands);
 
+  let search = document.querySelector("input");
 
+  search.addEventListener("keyup", () => {
+    if (search.value === "") {
+      throw "No valid input";
+    } else {
+      let newBands = bands.filter(band => {
+        if (band.name.toLowerCase().indexOf(search.value) > -1) return band;
+      });
 
+      renderByName(newBands);
+    }
+  });
+};
 
+/////// Main function call ////////////////
 
-
-
-
-
-
-
-
-
-
-
-/////// Calling the functions ////////////////
-
-var url = './bands.json';
 loadJson(url);
