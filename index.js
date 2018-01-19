@@ -6,19 +6,19 @@ renderByName = bands => {
   let completeListOfBands = bands.map(function(band, i) {
     let memberslist = renderMembers(band.members);
     let albumslist = renderAlbums(band.albums);
-    return `<div id='band1'>
-      <h2 class='space-between'>${band.name}<h2>
-      <h3 class='space-between'>${band.genre}<h3>
-      <h3 class='space-between'>Members<h3>
+    return `<div id="band1">
+      <h2 class="space-between">${band.name}<h2>
+      <h3 class="space-between">${band.genre}<h3>
+      <h3 class="space-between">Members<h3>
 
-      <ul class='members space-between'>
+      <ul class="members space-between">
         <li>${memberslist}</li>
 
       </ul>
-      <h3 class='space-between'>Albums<h3>
+      <h3 class="space-between">Albums<h3>
 
 
-      <ul class='albums space-between'>
+      <ul class="albums space-between">
         <li>${albumslist}</li>
       </ul>
     </div>`;
@@ -47,8 +47,8 @@ renderMembers = members => {
     htmlString += `
 
           <li>
-            <span class='member-name'>${member.name}</span>
-            <span class='member-instrument'>${member.instrument}</span>
+            <span class="member-name">${member.name}</span>
+            <span class="member-instrument">${member.instrument}</span>
           </li>`;
   });
 
@@ -62,8 +62,8 @@ renderAlbums = albums => {
     htmlString += `
 
           <li>
-            <span class='album-name'>${album.title}</span>
-            <span class='album-release-year'>${album.releaseYear}</span>
+            <span class="album-name">${album.title}</span>
+            <span class="album-release-year">${album.releaseYear}</span>
           </li>`;
   });
 
